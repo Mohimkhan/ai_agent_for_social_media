@@ -20,9 +20,7 @@ const Header = () => {
             <div
               tabIndex={0}
               role="button"
-              className={`btn btn-ghost btn-circle ${
-                session?.user ? "mr-5" : ""
-              }`}
+              className="btn btn-ghost btn-circle w-auto"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -105,9 +103,9 @@ const Header = () => {
             </ul>
           </div>
         </div>
-        <div className="mx-auto sm:mx-0">
+        <div className="mx-auto sm:mx-0 flex justify-center items-center gap-4">
           <Link
-            className="btn btn-ghost text-xl text-primary-color gap-0"
+            className="btn btn-ghost text-xl text-primary-color gap-0 p-0"
             href="/"
           >
             <div>
