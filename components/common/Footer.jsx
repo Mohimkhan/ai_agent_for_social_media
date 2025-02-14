@@ -3,9 +3,9 @@ import { LinkPreview } from "../ui/link-preview";
 
 const Footer = () => {
   return (
-    <div className="absolute bottom-2 left-1/2 -translate-x-2/4 cursor-pointer dark:bg-transparent dark:text-white text-black font-semibold tracking-wider text-xs md:text-[16px]">
-      <div>
-        <span>
+    <div className="grid place-content-center cursor-pointer dark:bg-transparent dark:text-white text-black font-semibold tracking-wider text-xs md:text-[16px] w-full">
+      <div className="flex justify-center items-center flex-col gap-1 w-full md:block">
+        <span className="text-[9px] md:text-[16px]">
           {`© ${new Date().getFullYear()} ${appName}. All rights reserved and build with ❤️ by`}
           {""}
         </span>
@@ -14,7 +14,9 @@ const Footer = () => {
           isStatic={true}
           imageSrc="/images/fb_me.png"
         >
-          <span className="ml-1">{socialMediaHandle}</span>
+          <span className="ml-1 text-2xl md:text-[16px]">
+            {socialMediaHandle}
+          </span>
         </LinkPreview>
       </div>
     </div>
