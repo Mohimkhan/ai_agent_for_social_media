@@ -33,7 +33,7 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased font-[family-name:var(--font-geist-sans)] w-full min-h-[100dvh] dark:bg-black bg-white  dark:bg-dot-white/[0.2] bg-dot-black/[0.2]`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased font-[family-name:var(--font-geist-sans)] w-full dark:bg-black bg-white  dark:bg-dot-white/[0.2] bg-dot-black/[0.2]`}
       >
         <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_78%,black)]"></div>
         <NextThemesProvider
@@ -44,7 +44,7 @@ export default function RootLayout({
         >
           {" "}
           <SessionProvider>
-            <div className="container mx-auto px-[10px] sm:px-0">
+            <div className="relative container mx-auto px-[10px] sm:px-0 min-h-[100dvh]">
               <Header />
               {children}
               <Footer />
