@@ -46,7 +46,7 @@ export default function RootLayout({
           <SessionProvider>
             <div className="relative container mx-auto px-[10px] sm:px-0 min-h-[100dvh]">
               <Header />
-              {children}
+              <div className="mt-8">{children}</div>
               <Footer />
             </div>
           </SessionProvider>
