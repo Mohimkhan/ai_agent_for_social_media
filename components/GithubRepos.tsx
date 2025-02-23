@@ -8,12 +8,12 @@ type Repo = {
 };
 
 export default async function GithubRepos() {
-  const repos:Repo[] = await fetchGithubRepos();
+  const repos: Repo[] = await fetchGithubRepos();
 
   return (
     <div>
       <h1>My GitHub Repositories</h1>
-      <ul className="mt-4 overflow-scroll h-[220px] w-full max-w-[410px]">
+      <ul className="mt-4 overflow-y-scroll h-[220px] w-full max-w-[410px]">
         {repos.map((repo) => (
           <li
             key={repo.id}
