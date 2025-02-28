@@ -1,7 +1,7 @@
 import { Octokit } from "@octokit/rest";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
-export async function GET() {
+export async function POST(request: NextRequest) {
   // const GITHUB_ACCESS_TOKEN = process.env.GITHUB_ACCESS_TOKEN;
 
   // if (!GITHUB_ACCESS_TOKEN) {
@@ -11,7 +11,7 @@ export async function GET() {
   //   );
   // }
 
-  const username = "Mohimkhan"; // Replace with the desired username
+  const { username } = await request.json();
 
   const octokit = new Octokit();
 
