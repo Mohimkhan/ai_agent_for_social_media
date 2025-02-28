@@ -7,12 +7,16 @@ type Repo = {
   private: boolean;
 };
 
-export default async function GithubRepos() {
-  const repos: Repo[] = await fetchGithubRepos();
+type GithubReposProps = {
+  username: string;
+};
+
+export default async function GithubRepos({ username }: GithubReposProps) {
+  const repos: Repo[] = await fetchGithubRepos(username);
 
   return (
     <div>
-      <h1>My GitHub Repositories</h1>
+      <h1>➡️{username}&apos;s GitHub Repositories</h1>
       <ul className="mt-4 overflow-y-scroll h-[220px] w-full max-w-[410px]">
         {repos.map((repo) => (
           <li
