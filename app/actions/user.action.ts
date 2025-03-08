@@ -1,7 +1,7 @@
-import { signIn } from "next-auth/react";
+import { signIn } from "@/lib/auth";
 
 interface signInParams {
-  redirectTo: string | undefined;
+  redirectTo?: string | undefined;
 }
 
 export const signInWithGoogle = async (params: signInParams) => {
