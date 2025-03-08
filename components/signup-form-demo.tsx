@@ -3,12 +3,9 @@ import React from "react";
 import { appName } from "@/constants";
 import { TypewriterEffectSmooth } from "./ui/typewriter-effect";
 import Image from "next/image";
+import { signInWithGithub } from "@/app/actions/user.action";
 
 export default function SignupFormDemo() {
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    console.log("Form submitted");
-  };
   return (
     <div className="max-w-md w-full mx-auto rounded-none md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black">
       <h2 className="flex items-center gap-1 font-bold text-xl text-neutral-800 dark:text-neutral-200">
@@ -18,16 +15,15 @@ export default function SignupFormDemo() {
         Login to {appName} so that we know who you are🤔
       </p>
 
-      <form
-        className="my-8"
-        onSubmit={handleSubmit}
-      >
+      <form className="my-8">
         <div className="bg-gradient-to-r from-transparent via-neutral-300 dark:via-neutral-700 to-transparent my-8 h-[1px] w-full" />
 
         <div className="flex flex-col space-y-4">
           <button
             className=" relative group/btn flex space-x-2 items-center justify-start px-4 w-full text-black rounded-md h-10 font-medium shadow-input bg-gray-50 dark:bg-zinc-900 dark:shadow-[0px_0px_1px_1px_var(--neutral-800)]"
-            type="submit"
+            onClick={async () => {
+              await signInWithGithub({});
+            }}
           >
             <Image
               src="/icons/githubIcon.png"
@@ -40,10 +36,7 @@ export default function SignupFormDemo() {
             </span>
             <BottomGradient />
           </button>
-          <button
-            className=" relative group/btn flex space-x-2 items-center justify-start px-4 w-full text-black rounded-md h-10 font-medium shadow-input bg-gray-50 dark:bg-zinc-900 dark:shadow-[0px_0px_1px_1px_var(--neutral-800)]"
-            type="submit"
-          >
+          <button className=" relative group/btn flex space-x-2 items-center justify-start px-4 w-full text-black rounded-md h-10 font-medium shadow-input bg-gray-50 dark:bg-zinc-900 dark:shadow-[0px_0px_1px_1px_var(--neutral-800)]">
             <Image
               src="/icons/googleIcon.png"
               alt="google icon"
